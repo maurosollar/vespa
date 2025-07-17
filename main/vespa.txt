@@ -3,6 +3,14 @@
 Rascunho:
 
 
+git init                            # Inicializa o repositório Git local
+git add .                           # Adiciona todos os arquivos ao índice (staging)
+git commit -m "first commit"        # Cria o primeiro commit com a mensagem
+git branch -M main                  # Renomeia a branch atual para "main" (padrão do GitHub)
+git remote add origin https://github.com/maurosollar/vespa.git  # Define o repositório remoto
+git push -u origin main             # Envia o commit para o GitHub e define a branch padrão de push/pull
+
+
 ledc_channel_t get_motor_channel_by_id(uint8_t id) {
     ledc_channel_t channel = LEDC_CHANNEL_0;
 
