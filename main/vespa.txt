@@ -2,6 +2,10 @@
 =====================================================================
 Rascunho:
 
+Crie o repositório "vespa" no Github
+
+Se o repositório no GitHub já tiver conteúdo (como um README criado online), pode precisar de fazer um:
+git pull origin main --allow-unrelated-histories antes do push.
 
 git init                            # Inicializa o repositório Git local
 git add .                           # Adiciona todos os arquivos ao índice (staging)
