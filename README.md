@@ -1,4 +1,4 @@
-# Projeto Drone **Vespa**
+# Drone **Vespa** - Somente para estudos.
 
 Versão: ESP-IDF **5.2**
 
