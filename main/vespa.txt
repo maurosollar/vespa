@@ -1,0 +1,32 @@
+
+=====================================================================
+Rascunho:
+
+
+ledc_channel_t get_motor_channel_by_id(uint8_t id) {
+    ledc_channel_t channel = LEDC_CHANNEL_0;
+
+    switch (id) {
+        case 0:
+            channel = LEDC_CHANNEL_0;
+            break;
+        case 1:
+            channel = LEDC_CHANNEL_1;
+            break;
+        case 2:
+            channel = LEDC_CHANNEL_2;
+            break;
+        case 3:
+            channel = LEDC_CHANNEL_3;
+            break;
+    }
+
+    return channel;
+}
+
+
+
+
+        //ESP_LOGI(TAG, "Acceleration: x=%.4f   y=%.4f   z=%.4f  Rotation: x=%.4f   y=%.4f   z=%.4f  
+        //               Temperature:  %.1f Pitch: %.4f Roll: %.4f", accel.x, accel.y, accel.z, rotation.x,
+        //               rotation.y, rotation.z, temp, pitch, roll);
