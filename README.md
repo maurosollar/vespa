@@ -132,16 +132,22 @@ Tyaw = K * ((F1 + F3) - (F2 + F4))
             +--+---+---+--+
                |   |   |
                |   |   +-------------+
-               |   |                 |
+               |   |                 |         
                | ( o ) Motor         |
                |   |                 |
-               |   O Vcc Bat+ 3.7V   |
+               |   O                 |
+               |   Vcc Bat+ 3.7V     |
+               |                     |
                |                     |
                +--/\/\/\--+--/\/\/\--+
-                   1K     |    10K
+                   1K     |    10K   |
+                          |          |
+                          |        -----
+                          |         ---
+                          |          -
                           |          
                           O          
-                         PWM          
+                         PWM recebido do ESP32-S3-Zero em 10KHz, testado em outras frequências, mas teve um bom desempenho em 10KHz
 ```
 
 ---
