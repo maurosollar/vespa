@@ -78,13 +78,6 @@ X
 
 ---
 
-## Estabilização para Voo Pairado
-
-- **Estabilização Horizontal** = Ancoragem
-- **Estabilização Vertical** = Controle de Altitude
-
----
-
 ## Relações de Força (Simplificado)
 
 ```c
