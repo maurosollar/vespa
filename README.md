@@ -151,6 +151,12 @@ Tyaw = K * ((F1 + F3) - (F2 + F4))
 
 ---
 
+### Fotos:
+
+<img src="./docs/vespa_foto1.jpeg">
+<img src="./docs/vespa_foto2.jpeg">
+---
+
 ## Próximos passos
 
 ```text
