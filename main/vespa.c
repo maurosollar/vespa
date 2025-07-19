@@ -54,7 +54,7 @@ typedef struct {
     float integral_max, integral_min;
 } PID_t;
 
-float roll, pitch, yaw; // Ângulos estimados
+float roll, pitch, yaw;
 uint16_t altitude; // Altitude medida
 uint8_t throttle_base = 10.0; // Throttle base (0-255)
 PID_t pid_altitude = {2.0, 0.01, 0.1, 0.0, 0.0, 240.0, 0.0}; // Kp, Ki, Kd, integral, previous_error, integral_max e integral_min
@@ -64,25 +64,20 @@ PID_t pid_yaw = {2.0, 0.0, 0.02, 0.0, 0.0, 240.0, 0.0};
 
 
 
-// Função PID com limitação de integral
 float pid_compute(PID_t *pid, float setpoint, float measured, float dt) {
     float error = setpoint - measured;
     
-    // Atualizar o termo integral
     pid->integral += error * dt;
     
-    // Limitar o termo integral
     if (pid->integral > pid->integral_max) {
         pid->integral = pid->integral_max;
     } else if (pid->integral < pid->integral_min) {
         pid->integral = pid->integral_min;
     }
     
-    // Calcular termo derivativo
     float derivative = (error - pid->previous_error) / dt;
     pid->previous_error = error;
     
-    // Calcular saída do PID
     return pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
 }
 
@@ -135,8 +130,8 @@ void controle_principal(void *pvParameters)
     float ax, ay, az, gx, gy, gz;
     float dt = 0.010; // 10ms
     //float dt = 0.1; // 100ms    
-    float alpha = 0.98; // Filtro complementar
-    float setpoint_altitude = 180.0; // 120mm
+    float alpha = 0.98;
+    float setpoint_altitude = 180.0; // 180mm
     float setpoint_roll = 0.0, setpoint_pitch = 0.0, setpoint_yaw = 0.0;
     float dif_ax = 0.0, dif_ay = 0.0, dif_az = 0.0; 
     float dif_gx = 0.0, dif_gy = 0.0, dif_gz = 0.0; 
@@ -231,7 +226,7 @@ void mpu6050()
 
     ESP_ERROR_CHECK(mpu6050_init(&dev_mpu6050));
 
-    mpu6050_set_dlpf_mode(&dev_mpu6050, MPU6050_DLPF_3); // Alterado para ligar o filtro, fazer testes para ver qual comportará melhor no Drone
+    mpu6050_set_dlpf_mode(&dev_mpu6050, MPU6050_DLPF_3); // Ainda fazendo testes para ver qual comportará melhor no Drone
     mpu6050_set_full_scale_accel_range(&dev_mpu6050, MPU6050_ACCEL_RANGE_4); // Se saturar, alterar para +-8g
     mpu6050_set_full_scale_gyro_range(&dev_mpu6050, MPU6050_GYRO_RANGE_2000); 
 
