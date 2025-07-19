@@ -1594,7 +1594,7 @@ vl53l1x_t *vl53l1x_config(int8_t port, int8_t scl, int8_t sda, int8_t xshut, uin
       i2c_driver_delete(port);
       return NULL;
    }
-   i2c_set_timeout(port, 80000);        // Clock stretching
+   i2c_set_timeout(port, 30);        // Clock stretching
    i2c_filter_enable(port, 5);
    if (xshut >= 0)
    {

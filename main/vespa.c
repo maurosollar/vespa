@@ -136,7 +136,7 @@ void controle_principal(void *pvParameters)
     float dif_ax = 0.0, dif_ay = 0.0, dif_az = 0.0; 
     float dif_gx = 0.0, dif_gy = 0.0, dif_gz = 0.0; 
 
-    // Calibrar acelerometro
+    // Calibrar acelerômetro
     vTaskDelay(pdMS_TO_TICKS(100));
     for (uint8_t i = 0; i < 100; i++) {
         ESP_ERROR_CHECK(mpu6050_get_motion(&dev_mpu6050, &accel, &rotation));
@@ -178,7 +178,7 @@ void controle_principal(void *pvParameters)
         float pitch_acc = atan2(-ax, sqrt(ay * ay + az * az)) * 180 / M_PI;
         roll = alpha * (roll + gx * dt) + (1 - alpha) * roll_acc;
         pitch = alpha * (pitch + gy * dt) + (1 - alpha) * pitch_acc;
-        yaw = yaw + gz * dt; 
+        yaw = yaw + gz * dt; // interessante usar um magnetômetro para ficar mais preciso, avaliar depois
 
         float throttle = pid_compute(&pid_altitude, setpoint_altitude, altitude, dt);
         float roll_output = pid_compute(&pid_roll, setpoint_roll, roll, dt);
@@ -204,7 +204,7 @@ void controle_principal(void *pvParameters)
         pwm_set_duty(LEDC_CHANNEL_3, pwm_m4);        
 
         xQueueSend(xQueue_acel_gyro, &accel, 0); // Se trocar 0 por portMAX_DELAY fica parado aqui até ser lida a fila.
-                                                 // Esta linha é somenta para dar uma amostragem dos dados do acelerometro no loop app_main
+                                                 // Esta linha é somenta para dar uma amostragem dos dados do acelerômetro no loop app_main
         vTaskDelay(pdMS_TO_TICKS(10)); // 100Hz
         //vTaskDelay(pdMS_TO_TICKS(100)); // 10Hz        
     }    
@@ -300,7 +300,7 @@ void app_main(void)
     uint16_t altitude_anterior = 0;
 
     vTaskDelay(pdMS_TO_TICKS(100)); 
-    
+
     sensor = vl53l1x_config(I2C_MASTER_NUM, I2C_MASTER_SCL_IO, I2C_MASTER_SDA_IO, XSHUT_PIN, SENSOR_ADDRESS, 1);
     if (!sensor) {
         printf("Erro ao configurar o sensor\n");
@@ -330,7 +330,7 @@ void app_main(void)
     while (true) {
         xQueueReceive(xQueue_acel_gyro, &t_accel, 0);
         altitude = (uint16_t) (altitude_anterior + vl53l1x_readSingle(sensor, 1))/2;
-        ESP_LOGI(TAG, "Accel: x=%.4f  y=%.4f  z=%.4f Dist=%d mm", t_accel.x, t_accel.y, t_accel.z, altitude);
+        //ESP_LOGI(TAG, "Accel: x=%.4f  y=%.4f  z=%.4f Dist=%d mm", t_accel.x, t_accel.y, t_accel.z, altitude);
         //teste();
         vTaskDelay(pdMS_TO_TICKS(50)); 
         altitude_anterior = altitude;

@@ -7,6 +7,8 @@
         "queue.h": "c",
         "i2cdev.h": "c",
         "math.h": "c",
-        "sockets.h": "c"
+        "sockets.h": "c",
+        "i2c.h": "c",
+        "i2c_master.h": "c"
     }
 }

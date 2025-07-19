@@ -220,4 +220,4 @@ set(EXTRA_COMPONENT_DIRS /home/mauro/esp/esp-idf-lib/components)
 
 -  [ESP Drone Drivers (Espressif)](https://docs.espressif.com/projects/espressif-esp-drone/en/latest/drivers.html)
 -  [esp-idf-lib (UncleRus)](https://github.com/UncleRus/esp-idf-lib)
--  [ESP32 VL53L1X Interface](https://github.com/revk/ESP32-VL53L1X)
+-  [ESP32 VL53L1X Interface](https://github.com/revk/ESP32-VL53L1X) Obs.: Alterado linha 1597 do vl53l1x.c para: i2c_set_timeout(port, 30); Estava dando "i2c timing value error" ao iniciar a execução do código, apesar de funcionar assim mesmo.
