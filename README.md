@@ -12,7 +12,7 @@ Versão: ESP-IDF **5.2**
     - *Dead Zone: 0–4 cm*
     - *Distância máxima: 4 metros*
 - **Potência e Controle:**
-  - 4 × Transistores Mosfet canal N IRLZ44N
+  - 4 × Transistores MOSFET canal N IRLZ44N
   - 4 × Resistores SMD 10K
   - 4 × Resistores SMD 1K
   - 4 × Diodos 1N4148
@@ -148,6 +148,19 @@ Tyaw = K * ((F1 + F3) - (F2 + F4))
                           |          
                           O          
                          PWM recebido do ESP32-S3-Zero em 10KHz, testado em outras frequências, mas teve um bom desempenho em 10KHz
+```
+
+---
+
+## Próximos passos
+
+```text
+
+  - Verificar nível da bateria
+  - Avaliar o uso de Wi-Fi para controle ou um módulo LoRa
+  - Implementar segurança: em caso de desnível acentuado em Pitch ou Roll, desligar os motores
+
+
 ```
 
 ---

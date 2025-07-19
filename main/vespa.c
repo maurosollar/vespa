@@ -28,7 +28,7 @@
 // Definições para o MPU6050
 #define ADDR MPU6050_I2C_ADDRESS_LOW
 // Max 1MHz for esp-idf, but device supports up to 1.7Mhz
-#define I2C_FREQ_HZ (1000000) //Padrão da biblioteca esp-idf-lib é 1000000 1MHz
+#define I2C_FREQ_HZ (1000000) // Padrão da biblioteca esp-idf-lib é 1000000 1MHz
 #define I2C_SDA 12
 #define I2C_SCL 13
 
@@ -299,6 +299,8 @@ void app_main(void)
     vl53l1x_t *sensor = NULL;
     uint16_t altitude_anterior = 0;
 
+    vTaskDelay(pdMS_TO_TICKS(100)); 
+    
     sensor = vl53l1x_config(I2C_MASTER_NUM, I2C_MASTER_SCL_IO, I2C_MASTER_SDA_IO, XSHUT_PIN, SENSOR_ADDRESS, 1);
     if (!sensor) {
         printf("Erro ao configurar o sensor\n");
