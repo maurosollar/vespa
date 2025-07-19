@@ -145,7 +145,7 @@ Tyaw = K * ((F1 + F3) - (F2 + F4))
 
 ---
 
-### Diagrama completo:
+### Diagrama:
 
 <img src="./docs/vespa_diagrama.png">
 
