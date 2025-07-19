@@ -101,14 +101,14 @@ Tyaw = K * ((F1 + F3) - (F2 + F4))
 **Conexão:**
 `Gate (GPIO) → Drain (Motor) → Source (GND)`
 
-**Cores dos fios:**
+**Cor do fio do motor ao Dreno de cada MOSFET:**
 
 - M1: Branco
 - M2: Vermelho
 - M3: Branco
 - M4: Vermelho
 
-### Diagrama Simplificado:
+### Diagrama Simplificado para um único motor:
 
 ```
               +--------------+
