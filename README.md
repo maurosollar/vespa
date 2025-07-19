@@ -44,7 +44,7 @@ Versão: ESP-IDF **5.2**
 
 ## Eixos e Movimentos
 
-- **Z (Thrust / Propulsão)**: Sobe e desce – aumenta ou diminui todos os motores.
+- **Z (Throttle / Propulsão)**: Sobe e desce – aumenta ou diminui todos os motores.
 - **Z (Yaw / Guinada)**: Rotação no eixo vertical – altera CW e CCW de forma oposta.
 - **X (Pitch / Arfagem)**: Inclinação frente/trás – ajusta frente vs. traseira.
 - **Y (Roll / Rolagem)**: Inclinação lateral – ajusta esquerda vs. direita.
