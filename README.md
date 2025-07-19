@@ -1,4 +1,4 @@
-# Drone **Vespa** - Projeto basicamente para estudos.
+# Drone **Vespa** - Projeto basicamente para estudos. Em construção...
 
 Versão: ESP-IDF **5.2**
 
@@ -161,6 +161,7 @@ Tyaw = K * ((F1 + F3) - (F2 + F4))
 
 ```text
 
+  - Acertar parâmetros do PID, fazer implementação para enviar as alterações remotamente em voo
   - Verificar nível da bateria
   - Avaliar o uso de Wi-Fi para controle ou um módulo LoRa
   - Implementar segurança: em caso de desnível acentuado em Pitch ou Roll, desligar os motores
