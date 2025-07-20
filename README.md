@@ -23,6 +23,8 @@ Versão: ESP-IDF **5.2**
   - 1 × Bateria 1S (3.7V, 480mAh)
 - **Estrutura:**
   - 1 × Frame QX95 3"
+- **Peso:**
+  - 50 Gramas sem bateria, do jeito que esta na foto abaixo.
 
 ---
 
