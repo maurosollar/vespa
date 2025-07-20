@@ -9,8 +9,8 @@ Versão: ESP-IDF **5.2**
 - **Sensores:**
   - 1 × MPU6050
   - 1 × TOF400C VL53L1X (3.0–5.0V, 40mA, 940nm IR)
-    - *Dead Zone: 0–4 cm*
-    - *Distância máxima: 4 metros*
+    - Dead Zone: 0–4 cm
+    - *Distância máxima: 4 metros* Mas visto que depende da luminosidade, inclusive em funcão da frequência de leitura por segundo. Ainda fazendo alguns testes.
 - **Potência e Controle:**
   - 4 × Transistores MOSFET canal N IRLZ44N
   - 4 × Resistores SMD 10K
